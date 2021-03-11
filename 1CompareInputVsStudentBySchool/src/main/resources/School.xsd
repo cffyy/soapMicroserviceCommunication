@@ -1,0 +1,34 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.howtodoinjava.com/xml/school"
+	targetNamespace="http://www.howtodoinjava.com/xml/school"
+	elementFormDefault="qualified">
+
+		<xs:element name="StudentDetailListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="docType" type="xs:string" />
+				<xs:element name="studentList" type="tns:Student"
+					nillable="true" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="StudentsListCompareResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Student">
+		<xs:sequence>
+			<xs:element name="schoolName" type="xs:string" />
+			<xs:element name="age" type="xs:int" />
+			<xs:element name="gender" type="xs:boolean" />
+			<xs:element name="standard" type="xs:int" />
+			<xs:element name="address" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
