@@ -52,7 +52,7 @@ public class Config extends WsConfigurerAdapter {
 	@Bean
 	public StudentClient studentClient(Jaxb2Marshaller marshaller) {
 		StudentClient client = new StudentClient();
-		client.setDefaultUri("http://localhost:8090/service/student-details");
+		client.setDefaultUri("http://localhost:8090/service/student-details-bySchoolName");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
 		return client;

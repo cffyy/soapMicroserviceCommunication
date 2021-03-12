@@ -13,9 +13,9 @@ public class StudentClient extends WebServiceGatewaySupport {
 
 	public StudentsListCompareResponse compareStudent(StudentBySchoolRequest request) {
 		StudentBySchoolResponse sr = (StudentBySchoolResponse) getWebServiceTemplate()
-				.marshalSendAndReceive(request);
-		StudentsListCompareResponse response = new StudentsListCompareResponse();
-		response.setStatus(sr.getStudentList().get(0).getSchoolName());
+				.marshalSendAndReceive(request); // 2nd req response
+		StudentsListCompareResponse response = new StudentsListCompareResponse(); //1st response
+		response.setStatus(sr.getStudentList().get(0).getSchoolName()); //construct 1st response and return it
 		return response;
 	}
 

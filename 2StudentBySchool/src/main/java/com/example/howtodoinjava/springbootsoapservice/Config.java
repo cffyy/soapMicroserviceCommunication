@@ -27,7 +27,7 @@ public class Config extends WsConfigurerAdapter {
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("StudentDetailsPort");
-		wsdl11Definition.setLocationUri("/service/student-details");
+		wsdl11Definition.setLocationUri("/service/student-details-bySchoolName");
 		wsdl11Definition.setTargetNamespace("http://www.howtodoinjava.com/xml/school");
 		wsdl11Definition.setSchema(schema);
 		return wsdl11Definition;
