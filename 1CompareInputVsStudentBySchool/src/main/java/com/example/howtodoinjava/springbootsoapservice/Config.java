@@ -33,17 +33,16 @@ public class Config extends WsConfigurerAdapter {
 		wsdl11Definition.setSchema(schema);
 		return wsdl11Definition;
 	}
+
 	@Bean
 	public XsdSchema studentSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("school.xsd"));
 	}
-	
-	
-	
+
 	@Bean
 	public Jaxb2Marshaller marshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-		// this package must match the package in the  specified in
+		// this package must match the package in the specified in
 		// pom.xml
 		marshaller.setContextPath("studentCompare.wsdl");
 		return marshaller;

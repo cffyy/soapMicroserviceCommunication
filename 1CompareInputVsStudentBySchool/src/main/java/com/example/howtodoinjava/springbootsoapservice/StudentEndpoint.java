@@ -15,18 +15,18 @@ import studentCompare.wsdl.StudentBySchoolRequest;
 public class StudentEndpoint {
 	private static final String NAMESPACE_URI = "http://www.howtodoinjava.com/xml/school";
 
-	private StudentClient studentService;
+	private StudentClient studentClient;
 
 	@Autowired
 	public StudentEndpoint(StudentClient studentService) {
-		this.studentService = studentService;
+		this.studentClient = studentService;
 	}
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "StudentDetailListRequest")
 	@ResponsePayload
-	public StudentsListCompareResponse getStudent(@RequestPayload StudentDetailListRequest request) { //1st request
-		StudentBySchoolRequest sbsr = new StudentBySchoolRequest(); //2nr request
+	public StudentsListCompareResponse getStudent(@RequestPayload StudentDetailListRequest request) { // 1st request
+		StudentBySchoolRequest sbsr = new StudentBySchoolRequest(); // 2nr request
 		sbsr.setSchoolName(request.getStudentList().get(0).getSchoolName());
-		return studentService.compareStudent(sbsr); //sending 2nd request
+		return studentClient.compareStudent(sbsr); // sending 2nd request
 	}
 }

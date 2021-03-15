@@ -13,20 +13,15 @@ import com.howtodoinjava.xml.school.StudentBySchoolResponse;
 public class StudentEndpoint {
 	private static final String NAMESPACE_URI = "http://www.howtodoinjava.com/xml/school";
 
-	private StudentRepository StudentRepository;
-
 	@Autowired
-	public StudentEndpoint(StudentRepository StudentRepository) {
-		this.StudentRepository = StudentRepository;
-	}
+	private StudentService studentService;
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "StudentBySchoolRequest")
 	@ResponsePayload
 	public StudentBySchoolResponse getStudent(@RequestPayload StudentBySchoolRequest request) {
-		StudentBySchoolResponse response = new StudentBySchoolResponse();
-
-		response.setStudentList(StudentRepository.findStudentTwo(request.getSchoolName()));
-		response.setDocType("850");
-		return response;
+		StudentBySchoolResponse studentBySchoolResponse = new StudentBySchoolResponse();
+		studentBySchoolResponse.getStudentList().addAll(studentService.findStudent(request.getSchoolName()));
+		studentBySchoolResponse.setDocType("850");
+		return studentBySchoolResponse;
 	}
 }

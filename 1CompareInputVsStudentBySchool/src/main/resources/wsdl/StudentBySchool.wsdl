@@ -1,3 +1,4 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.howtodoinjava.com/xml/school" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.howtodoinjava.com/xml/school" targetNamespace="http://www.howtodoinjava.com/xml/school">
 <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.howtodoinjava.com/xml/school">
@@ -12,11 +13,11 @@
 <xs:complexType>
 <xs:sequence>
 <xs:element name="docType" type="xs:string"/>
-<xs:element maxOccurs="unbounded" minOccurs="0" name="studentList" nillable="true" type="tns:StudentTwo"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="studentList" nillable="true" type="tns:StudentM2"/>
 </xs:sequence>
 </xs:complexType>
 </xs:element>
-<xs:complexType name="StudentTwo">
+<xs:complexType name="StudentM2">
 <xs:sequence>
 <xs:element name="schoolName" type="xs:string"/>
 <xs:element name="age" type="xs:int"/>
@@ -53,7 +54,7 @@
 </wsdl:binding>
 <wsdl:service name="StudentDetailsPortService">
 <wsdl:port binding="tns:StudentDetailsPortSoap11" name="StudentDetailsPortSoap11">
-<soap:address location="http://localhost:8090/service/student-details"/>
+<soap:address location="http://localhost:8090/service/student-details-bySchoolName"/>
 </wsdl:port>
 </wsdl:service>
 </wsdl:definitions>

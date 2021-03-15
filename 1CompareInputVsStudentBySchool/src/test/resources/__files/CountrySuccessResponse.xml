@@ -1,0 +1,15 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:StudentBySchoolResponse xmlns:ns2="http://www.howtodoinjava.com/xml/school">
+         <ns2:docType>850</ns2:docType>
+         <ns2:studentList>
+            <ns2:schoolName>English School</ns2:schoolName>
+            <ns2:age>10</ns2:age>
+            <ns2:gender>true</ns2:gender>
+            <ns2:standard>5</ns2:standard>
+            <ns2:address>Delhi</ns2:address>
+         </ns2:studentList>
+      </ns2:StudentBySchoolResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
